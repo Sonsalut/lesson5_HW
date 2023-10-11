@@ -14,76 +14,7 @@ print("Bài 1")
 //Tên, mã sinh viên, điểm toán, điểm lý, điểm hóa.
 //Ứng dụng cho phép thêm mới sinh viên, cập nhật điểm số của sinh viên, hiển thị danh sách sinh viên theo thứ tự điểm trung bình giảm dần. Sử dụng Struct.
 
-
-//LƯU TRỮ CÁC STRUCT CHỨA DỮ LIỆU SV
-var students = [Student]()
-print(students)
-//THÊM MỚI SINH VIÊN
-func addStudent() {
-    //
-    var name = ""
-    var maSV = ""
-    var toan: Float = 0
-    var ly: Float = 0
-    var hoa: Float = 0
-    
-    while name.isEmpty {
-        print("Nhập tên sinh viên:")
-        if let input = readLine(), !input.isEmpty {
-            name = input
-        } else {
-            print("Tên không được để trống.")
-        }
-    }
-    
-    while maSV.isEmpty {
-        print("Nhập mã sinh viên:")
-        if let input = readLine(), !input.isEmpty {
-            maSV = input
-        } else {
-            print("Mã sinh viên không được để trống.")
-        }
-    }
-    //Nhập điểm các môn, không bắt buộc nhập, nếu ko nhập thì mặc định = 0
-    print("Nhập điểm Toán:")
-    if let input = readLine(), let score = Float(input) {
-        toan = score
-    }
-    
-    print("Nhập điểm Lý:")
-    if let input = readLine(), let score = Float(input) {
-        ly = score
-    }
-    
-    print("Nhập điểm Hoá:")
-    if let input = readLine(), let score = Float(input) {
-        hoa = score
-    }
-    
-    let student = Student(name: name, maSV: maSV, toan: toan, ly: ly, hoa: hoa)
-    students.append(student)
-    print("Thêm sinh viên thành công!")
-}
-
-//CẬP NHẬT ĐIỂM SINH VIÊN
-func updateStudentScore() {
-    //
-}
-
-
-//HIỂN THỊ DS SINH VIÊN THEO THỨ TỰ ĐIỂM
-func showStudentList() {
-    //
-    let sortedStudents = students.sorted(by: { $0.trungBinh > $1.trungBinh })
-    
-    print("\nDanh sách sinh viên theo thứ tự điểm trung bình giảm dần:")
-    for student in sortedStudents {
-        print("Tên: \(student.name), Mã SV: \(student.maSV), Điểm Trung bình: \(student.trungBinh)")
-    }
-}
-
-
-//HÀM TỔNG QUẢN LÝ CHỨC NĂNG
+//HÀM ĐIỀU KHIỂN CHƯƠNG TRÌNH
 func manager() {
     print("Hệ thống quản lý điểm sinh viên")
     print("1. Thêm mới sinh viên")
@@ -110,3 +41,50 @@ func manager() {
 
 manager()
 
+print("Bài 2")
+//Viết một ứng dụng cho phép quản lý thông tin của các sản phẩm trong cửa hàng. Mỗi sản phẩm sẽ có thông tin như sau: Tên, mã sản phẩm, giá bán, số lượng trong kho.
+//Ứng dụng cho phép thêm mới sản phẩm, cập nhật thông tin của sản phẩm, hiển thị danh sách sản phẩm, tìm kiếm sản phẩm theo tên. Sử dụng Class.
+
+//HÀM ĐIỀU KHIỂN CHƯƠNG TRÌNH
+let store = Store()
+
+while true {
+    print("\nChọn một tùy chọn:")
+    print("1. Thêm sản phẩm")
+    print("2. Cập nhật thông tin sản phẩm")
+    print("3. Hiển thị danh sách sản phẩm")
+    print("4. Tìm kiếm sản phẩm theo tên")
+    print("5. Thoát")
+    
+    if let choice = readLine(), let option = Int(choice) {
+        switch option {
+        case 1:
+            store.addProduct()
+        case 2:
+            store.updateProduct()
+        case 3:
+            store.listProducts()
+        case 4:
+            print("Nhập tên sản phẩm:")
+            if let name = readLine(), !name.isEmpty {
+                let searchResults = store.searchProductByName(name: name)
+                if !searchResults.isEmpty {
+                    print("Kết quả tìm kiếm:")
+                    for product in searchResults {
+                        print("Tên: \(product.name), Mã SP: \(product.productCode), Giá: \(product.price), Số lượng trong kho: \(product.quantityInStock)")
+                    }
+                } else {
+                    print("Không tìm thấy sản phẩm.")
+                }
+            } else {
+                print("Tên sản phẩm không được để trống.")
+            }
+        case 5:
+            exit(0)
+        default:
+            print("Tùy chọn không hợp lệ. Vui lòng chọn lại.")
+        }
+    } else {
+        print("Vui lòng nhập một số.")
+    }
+}

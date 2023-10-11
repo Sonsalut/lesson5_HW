@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D04B38772AD5D12C00D21039 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B38762AD5D12C00D21039 /* main.swift */; };
 		D04B387E2AD5D13700D21039 /* studentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B387D2AD5D13700D21039 /* studentStruct.swift */; };
+		D04B38802AD5D3B200D21039 /* studentFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B387F2AD5D3B200D21039 /* studentFunction.swift */; };
+		D04B38822AD5D47800D21039 /* storeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B38812AD5D47800D21039 /* storeClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,8 @@
 		D04B38732AD5D12C00D21039 /* lesson5_HW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lesson5_HW; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04B38762AD5D12C00D21039 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D04B387D2AD5D13700D21039 /* studentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentStruct.swift; sourceTree = "<group>"; };
+		D04B387F2AD5D3B200D21039 /* studentFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentFunction.swift; sourceTree = "<group>"; };
+		D04B38812AD5D47800D21039 /* storeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storeClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				D04B38762AD5D12C00D21039 /* main.swift */,
 				D04B387D2AD5D13700D21039 /* studentStruct.swift */,
+				D04B387F2AD5D3B200D21039 /* studentFunction.swift */,
+				D04B38812AD5D47800D21039 /* storeClass.swift */,
 			);
 			path = lesson5_HW;
 			sourceTree = "<group>";
@@ -123,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04B38802AD5D3B200D21039 /* studentFunction.swift in Sources */,
 				D04B387E2AD5D13700D21039 /* studentStruct.swift in Sources */,
+				D04B38822AD5D47800D21039 /* storeClass.swift in Sources */,
 				D04B38772AD5D12C00D21039 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
